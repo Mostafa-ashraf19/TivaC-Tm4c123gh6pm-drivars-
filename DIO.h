@@ -34,6 +34,9 @@ typedef enum {INPUT,OUTPUT,INTERNAL_PULL_UP,INTERNAL_PULL_DOWN}Mode;
 //#define GPIO_PORTA_AHB_DATA_R   (*((volatile unsigned long *)0x400583FC))
 void Dio_config(PortName portname,PinNum pinnumber,Mode mode);
 void Dio_Write_Pin(PortName portname,PinNum pinnum,Signal type);
-short Dio_Read_Pin(PortName portname,PinNum pinnum);
+void Dio_Wite_Port(PortName portname,uint_8 value);
+void Dio_Clear_Port(PortName portname);
+uint_16 Dio_Read_Pin(PortName portname,PinNum pinnum);
 void Dio_Toggle_Pin(PortName portname,PinNum pinnum);
+//void Dio_config_altfun()
 #endif

@@ -2867,7 +2867,7 @@
 //
 //*****************************************************************************
 #define UART_LCRH_SPS           0x00000080  // UART Stick Parity Select
-#define UART_LCRH_WLEN_M        0x00000060  // UART Word Length
+#define UART_LCRH_WLEN_M        0x00000060  // UART Word Length defult
 #define UART_LCRH_WLEN_5        0x00000000  // 5 bits (default)
 #define UART_LCRH_WLEN_6        0x00000020  // 6 bits
 #define UART_LCRH_WLEN_7        0x00000040  // 7 bits

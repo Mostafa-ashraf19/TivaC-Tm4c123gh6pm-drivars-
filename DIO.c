@@ -72,7 +72,8 @@ void Dio_config(PortName portname,PinNum pinnumber,Mode mode)
 			}
 			break;
 			case PORTC:
-				GPIO_PORTC_LOCK_R= MAGIC_NUMBER; // for un lock port
+				
+			//not use to port c	GPIO_PORTC_LOCK_R= MAGIC_NUMBER; // for un lock port
 			// should her put commit reg but default value if (FF) maybe putted next time or new virsion  
 			SET_BIT(GPIO_PORTC_DEN_R,pinnumber);// enable digital mode
 			CLEAR_BIT(GPIO_PORTC_AFSEL_R,pinnumber); // disable altenate function
@@ -181,7 +182,7 @@ void Dio_config(PortName portname,PinNum pinnumber,Mode mode)
 	}
 }
 /*
-	Function Name        : Dio_Write
+	Function Name        : Dio_Write_Pin
 	Function Returns     : void
 	Function Arguments   : PortName portname,PinNum pinnum,Signal type
 	Function Description : Set the value of the given pin in the given port (outputvalue LOW=0,HIGH=1) 
@@ -236,12 +237,88 @@ void Dio_Write_Pin(PortName portname,PinNum pinnum,Signal type)
 			}
 }
 /*
+	Function Name        : Dio_Wite_Port
+	Function Returns     : void
+	Function Arguments   : PortName portname,uint_8 value
+	Function Description : Set the value given in port  
+*/
+void Dio_Wite_Port(PortName portname,uint_8 value)
+{
+		switch (portname)
+			{
+				case PORTA:
+					GPIO_PORTA_DATA_R=value;
+					break;
+					
+				case PORTB:
+					GPIO_PORTB_DATA_R=value;
+					break;
+					
+				case PORTC:
+				GPIO_PORTC_DATA_R=value;
+					break;
+					
+				case PORTD:
+				GPIO_PORTD_DATA_R=value;
+					break;
+					
+				case PORTE:
+					GPIO_PORTE_DATA_R=value;
+					break;	
+					
+				case PORTF:
+					GPIO_PORTF_DATA_R=value;
+					break;
+				
+				default:
+						break;
+			}
+}
+/*
+	Function Name        : Dio_Clear_Port
+	Function Returns     : void
+	Function Arguments   : PortName portname
+	Function Description : Clear data in given port  
+*/
+void Dio_Clear_Port(PortName portname)
+{
+	switch (portname)
+			{
+				case PORTA:
+					GPIO_PORTA_DATA_R=0;
+					break;
+					
+				case PORTB:
+					GPIO_PORTB_DATA_R=0;
+					break;
+					
+				case PORTC:
+				GPIO_PORTC_DATA_R=0;
+					break;
+					
+				case PORTD:
+				GPIO_PORTD_DATA_R=0;
+					break;
+					
+				case PORTE:
+					GPIO_PORTE_DATA_R=0;
+					break;	
+					
+				case PORTF:
+					GPIO_PORTF_DATA_R=0;
+					break;
+				
+				default:
+						break;
+			}
+}
+/*
 	Function Name        : Dio_Read_Pin
 	Function Returns     : unsigned char
 	Function Arguments   : PortName portname,PinNum pinnum
 	Function Description : Returns 1 if the value of the given pin is high and zero if the value is low
 */
-short Dio_Read_Pin(PortName portname,PinNum pinnum)
+uint_16 Dio_Read_Pin(PortName portname,PinNum pinnum)
 	{
 			switch(portname)
 			{
