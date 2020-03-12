@@ -2,13 +2,22 @@
 #define UART_H_
 #include"DIO.h"
 
+
 typedef enum {_5_Bits=0,_6_Bits=1,
 							_7_Bits=2,_8_Bits=3,}wordLength;
 
 typedef enum {FALSE,TRUE}LOGICAL_BOOL;	
 typedef enum {TXFF,RXFF}Q_REG;
 
-void UART_Config(PortName);
+void UART_Config(PortName);// not avaliable yet
+
 LOGICAL_BOOL UART_Check_T_R_Queue(Q_REG reg);
+
+void UART_Send_Char(uint_8 Data);
+
+uint_8 UART_Receive_Char();
+
+void UART_Send_String(uint_8 * Data);
+
 
 #endif
