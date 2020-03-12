@@ -6,7 +6,6 @@
 
 void UART_config(PortName portname)
 {
-	//SYSCTL_RCGCUART_R 
+	//SYSCTL_RCGCUART_R .
 	SET_BIT(SYSCTL_RCGCUART_R,portname);
-	
 }

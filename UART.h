@@ -5,7 +5,10 @@
 typedef enum {_5_Bits=0,_6_Bits=1,
 							_7_Bits=2,_8_Bits=3,}wordLength;
 
-void UART_Config(PortName);
+typedef enum {FALSE,TRUE}LOGICAL_BOOL;	
+typedef enum {TXFF,RXFF}Q_REG;
 
+void UART_Config(PortName);
+LOGICAL_BOOL UART_Check_T_R_Queue(Q_REG reg);
 
 #endif
