@@ -8,9 +8,9 @@
 
 #define BRC_DIVSIOR		(float_32)(SYSTEM_CLOCK/(float_32)(16*(float_32)DESIRED_BAUD_RATE))
 
-#define INTEGER_VALUE		((int_32)BRC_DIVSIOR)
+#define UARTnBR_INTEGER_VALUE		((int_32)BRC_DIVSIOR)
 
-#define FRACTIONAL_VALUE  (int_32)((((float_32)BRC_DIVSIOR-(float_32)INTEGER_VALUE)*(float_32)64)+(float_32).5)
+#define UARTnBR_FRACTIONAL_VALUE  (int_32)((((float_32)BRC_DIVSIOR-(float_32)UARTnBR_INTEGER_VALUE)*(float_32)64)+(float_32).5)
 
 
 
