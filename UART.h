@@ -10,7 +10,7 @@ typedef enum {_5_Bits=0,_6_Bits=1,
 typedef enum {FALSE,TRUE}LOGICAL_BOOL;	
 typedef enum {TXFF,RXFF}Q_BIT;
 
-void UART_Config(PortName);// not avaliable yet
+void UART_Config(PortName);
 
 LOGICAL_BOOL UART_Check_Tx_Rx_Queue(Q_BIT);
 
