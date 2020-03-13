@@ -12,13 +12,65 @@
 
 #define UARTnBR_FRACTIONAL_VALUE  (int_32)((((float_32)BRC_DIVSIOR-(float_32)UARTnBR_INTEGER_VALUE)*(float_32)64)+(float_32).5)
 
+#define UART_NUM  0
+
+
+#if  UART_NUM == 0
+			#define UARTn_FLAG_REG	 	UART0_FR_R 
+			#define UARTn_DATA_REG		UART0_DR_R
+			#define UARTn_INTBD_REG		UART0_IBRD_R
+			#define UARTn_FRACBR_REG	UART0_FBRD_R 
+			#define UARTn_CTL_REG			UART0_CTL_R
+			
+#elif UART_NUM == 1
+	`		#define UARTn_FLAG_REG	 	UART0_FR_R 
+			#define UARTn_DATA_REG		UART0_DR_R
+			#define UARTn_INTBD_REG		UART0_IBRD_R
+			#define UARTn_FRACBR_REG	UART0_FBRD_R 
+			#define UARTn_CTL_REG			UART0_CTL_R
+
+#elif UART_NUM == 2
+			#define UARTn_FLAG_REG	 	UART0_FR_R 
+			#define UARTn_DATA_REG		UART0_DR_R
+			#define UARTn_INTBD_REG		UART0_IBRD_R
+			#define UARTn_FRACBR_REG	UART0_FBRD_R 
+			#define UARTn_CTL_REG			UART0_CTL_R
+#elif UART_NUM == 3
+			#define UARTn_FLAG_REG	 	UART0_FR_R 
+			#define UARTn_DATA_REG		UART0_DR_R
+			#define UARTn_INTBD_REG		UART0_IBRD_R
+			#define UARTn_FRACBR_REG	UART0_FBRD_R 
+			#define UARTn_CTL_REG			UART0_CTL_R
+#elif UART_NUM == 4
+			#define UARTn_FLAG_REG	 	UART0_FR_R 
+			#define UARTn_DATA_REG		UART0_DR_R
+			#define UARTn_INTBD_REG		UART0_IBRD_R
+			#define UARTn_FRACBR_REG	UART0_FBRD_R 
+			#define UARTn_CTL_REG			UART0_CTL_R
+#elif UART_NUM == 5
+			#define UARTn_FLAG_REG	 	UART0_FR_R 
+			#define UARTn_DATA_REG		UART0_DR_R
+			#define UARTn_INTBD_REG		UART0_IBRD_R
+			#define UARTn_FRACBR_REG	UART0_FBRD_R 
+			#define UARTn_CTL_REG			UART0_CTL_R
+#elif UART_NUM == 6
+			#define UARTn_FLAG_REG	 	UART0_FR_R 
+			#define UARTn_DATA_REG		UART0_DR_R
+			#define UARTn_INTBD_REG		UART0_IBRD_R
+			#define UARTn_FRACBR_REG	UART0_FBRD_R 
+			#define UARTn_CTL_REG			UART0_CTL_R
+#elif UART_NUM == 7
+			#define UARTn_FLAG_REG	 	UART0_FR_R 
+			#define UARTn_DATA_REG		UART0_DR_R
+			#define UARTn_INTBD_REG		UART0_IBRD_R
+			#define UARTn_FRACBR_REG	UART0_FBRD_R 
+			#define UARTn_CTL_REG			UART0_CTL_R
+
+#endif
+ 
 
 
 
-#define UARTn_FLAG_REG	 	UART0_FR_R 
-#define UARTn_DATA_REG		UART0_DR_R
-#define UARTn_INTBD_REG		UART0_IBRD_R
-#define UARTn_FRACBR_REG	UART0_FBRD_R 
 
 
 #endif
