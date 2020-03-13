@@ -1,6 +1,12 @@
 #include 	"UART.h"
 #include	"UART_Config.h"
 
+/*
+	Function Name        : UART_config
+	Function Returns     : void
+	Function Arguments   : PortName portname
+	Function Description : set configuration of UARTn for certin port  
+*/
 void UART_config(PortName portname)
 {
 	//SYSCTL_RCGCUART_R.
@@ -22,7 +28,7 @@ void UART_Send_Char(uint_8 Data)
 	Function Name        : UART_Check_Tx_Rx_Queue
 	Function Returns     : LOGICAL_BOOL (TRUE or FALSE)
 	Function Arguments   : Q_REG bit ( TXFF bit or RXFF bit)
-	Function Description : modified port critria depend on some operations and modes for each pin 
+	Function Description : return TXFF full or not in case of send or RXFF empty or not in case of receive 
 */
 LOGICAL_BOOL UART_Check_Tx_Rx_Queue(Q_BIT bit)
 {
@@ -32,10 +38,10 @@ LOGICAL_BOOL UART_Check_Tx_Rx_Queue(Q_BIT bit)
 		return IS_BIT_SET(UARTn_FLAG_REG,PIN4);
 }
 /*
-	Function Name        : Dio_config
-	Function Returns     : void
-	Function Arguments   : PortName portname,PinNum pinnumber,Mode mode
-	Function Description : modified port critria depend on some operations and modes for each pin 
+	Function Name        : UART_Receive_Char
+	Function Returns     : uint_8
+	Function Arguments   : Void
+	Function Description : receive uint_8 data from data reg then return it   
 */
 uint_8 UART_Receive_Char()
 {
@@ -43,10 +49,10 @@ uint_8 UART_Receive_Char()
 		return	(UARTn_DATA_REG);
 }
 /*
-	Function Name        : Dio_config
+	Function Name        : UART_Send_String
 	Function Returns     : void
-	Function Arguments   : PortName portname,PinNum pinnumber,Mode mode
-	Function Description : modified port critria depend on some operations and modes for each pin 
+	Function Arguments   : uint_8 * Data
+	Function Description : Send Block of data like "string" 
 */
 void UART_Send_String(uint_8 * Data)
 {

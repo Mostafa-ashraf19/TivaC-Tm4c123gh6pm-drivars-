@@ -1,7 +1,6 @@
 #ifndef UART_H_
 #define UART_H_
 
-//#include "dio.h"
 #include"DIO.h"
 
 
@@ -13,13 +12,13 @@ typedef enum {TXFF,RXFF}Q_BIT;
 
 void UART_Config(PortName);// not avaliable yet
 
-LOGICAL_BOOL UART_Check_Tx_Rx_Queue(Q_REG reg);
+LOGICAL_BOOL UART_Check_Tx_Rx_Queue(Q_BIT);
 
-void UART_Send_Char(uint_8 Data);
+void UART_Send_Char(uint_8);
 
 uint_8 UART_Receive_Char();
 
-void UART_Send_String(uint_8 * Data);
+void UART_Send_String(uint_8 *);
 
 
 #endif
