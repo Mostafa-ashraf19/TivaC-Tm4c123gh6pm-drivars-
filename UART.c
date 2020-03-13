@@ -9,8 +9,10 @@
 */
 void UART_config(PortName portname)
 {
-	//SYSCTL_RCGCUART_R.
-	SET_BIT(SYSCTL_RCGCUART_R,portname);
+	SET_BIT(SYSCTL_RCGCUART_R,portname); // set clock for n UART
+	UARTn_INTBD_REG = UARTnBR_INTEGER_VALUE; // put integer value in DIVINT reg
+	UARTn_FRACBR_REG = UARTnBR_FRACTIONAL_VALUE; // put fractional value in DIVFRAC reg
+	
 }
 
 /*

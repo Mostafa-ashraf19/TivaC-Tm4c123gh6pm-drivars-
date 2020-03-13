@@ -20,5 +20,5 @@ uint_8 UART_Receive_Char();
 
 void UART_Send_String(uint_8 *);
 
-
+// have 8 uart
 #endif
